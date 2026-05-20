@@ -1,0 +1,481 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: rgb(7, 129, 70);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px grey;
+}
+
+/* ===== LOGO ===== */
+.logo img, .Logo img {
+    width: 180px;
+    height: auto;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* ===== LINKS ===== */
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: rgb(7, 129, 70);
+    border-radius: 5px;
+}
+
+/* ===== BANNER ===== */
+.banner, .Hero {
+    background-color: rgb(7, 129, 70);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.banner h1, .Hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 16px;
+}
+
+/* ===== BUTTONS ===== */
+.BTN, .btn {
+    background-color: white;
+    color: rgb(7, 129, 70);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.BTN:hover, .btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* ===== PRODUCTS GRID ===== */
+.Prduct {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Product-Card1 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.Product-Card1 h4 {
+    color: rgb(7, 129, 70);
+    margin-bottom: 10px;
+}
+
+/* ===== SERVICES GRID ===== */
+.Services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Service-card1, .Service-card2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.Service-card1 h4, .Service-card2 h4 {
+    color: rgb(7, 129, 70);
+    margin: 10px 0;
+}
+
+/* ===== PAGINATION ===== */
+.Pagination {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.Pagination button {
+    background-color: rgb(7, 129, 70);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.Pagination button:hover {
+    background-color: rgb(5, 100, 55);
+}
+
+.Pagination button.active {
+    background-color: white;
+    color: rgb(7, 129, 70);
+    border: 1px solid rgb(7, 129, 70);
+}
+
+/* ===== CART TABLE ===== */
+.cart-table {
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-table th, .cart-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: rgb(7, 129, 70);
+    color: white;
+}
+
+.cart-table button {
+    background-color: rgb(7, 129, 70);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 3px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.qty {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* ===== CART SUMMARY ===== */
+.cart-summary {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-summary button {
+    background-color: rgb(7, 129, 70);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== CHECKOUT & BOOKING FORMS ===== */
+.Customer-details, .Delivery, .Summary {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.Customer-details h3, .Delivery h4, .Summary h4 {
+    color: rgb(7, 129, 70);
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.delivery-options label {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid rgb(7, 129, 70);
+}
+
+/* ===== PRODUCT DETAILS PAGE ===== */
+.Product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Name-card {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f0f0f0;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.details {
+    flex: 2;
+    min-width: 250px;
+}
+
+.details h3 {
+    margin-bottom: 10px;
+}
+
+.Pbuttons {
+    margin-top: 20px;
+}
+
+.Pbuttons .BTN {
+    margin-right: 10px;
+}
+
+.DTLS {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Descriptions, .Dosage {
+    flex: 1;
+    min-width: 200px;
+}
+
+.Descriptions h3, .Dosage h3 {
+    color: rgb(7, 129, 70);
+    margin-bottom: 10px;
+}
+
+/* ===== INFO SECTION (ABOUT US) ===== */
+.Info {
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Info h3 {
+    color: rgb(7, 129, 70);
+    margin: 20px 0 10px 0;
+}
+
+.Addresses, .Contact {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* ===== CARD GROUP (INDEX PAGE) ===== */
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h5 {
+    color: rgb(7, 129, 70);
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: #555;
+    line-height: 1.5;
+}
+
+h5 {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    color: rgb(7, 129, 70);
+}
+
+/* ===== SLIDER ===== */
+.slider {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: rgb(7, 129, 70);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .nav {
+        gap: 10px;
+    }
+    
+    .nav a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    
+    .banner h1, .Hero h1 {
+        font-size: 22px;
+    }
+    
+    .Product {
+        flex-direction: column;
+    }
+    
+    .cart-table th, .cart-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .Pagination button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+    
+    .nav a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    
+    .banner, .Hero {
+        padding: 20px 10px;
+    }
+    
+    .cart-table {
+        font-size: 10px;
+    }
+    
+    .cart-table button {
+        padding: 3px 6px;
+    }
+}

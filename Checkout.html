@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - PharmaLink</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="Logo">
+            <img src="LOGO AND BACKGROUND IMAGES/Logo.png" alt="PharmaLink Logo" width="200">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="Products.html">Products</a>
+        <a href="Services.html">Services</a>
+        <a href="Cart.html">Cart</a>
+    </div>
+
+    <!-- Hero / Banner -->
+    <div class="Hero">
+        <h1>CHECKOUT</h1>
+    </div>
+
+    <!-- Customer Details -->
+    <div class="Customer-details">
+        <h3>CUSTOMER DETAILS</h3>
+
+        <div class="form-group">
+            <label>FULL NAME</label>
+            <input type="text" id="fullName" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+            <label>PHONE NUMBER</label>
+            <input type="text" id="phone" placeholder="e.g. 71234567">
+        </div>
+
+        <div class="form-group">
+            <label>ADDRESS</label>
+            <input type="text" id="address" placeholder="Enter your delivery address">
+        </div>
+    </div>
+
+    <!-- Delivery / Pickup Option -->
+    <div class="Delivery">
+        <div class="delivery-options">
+            <h4>DELIVERY / PICKUP OPTION</h4>
+            <label>
+                <input type="radio" name="option" value="Delivery" checked> DELIVERY
+            </label>
+            <label>
+                <input type="radio" name="option" value="Pickup"> PICKUP
+            </label>
+        </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="Summary">
+        <div class="box">
+            <h4>ORDER SUMMARY</h4>
+            <div id="orderSummary">
+                <!-- Items inserted by JavaScript -->
+            </div>
+            <div class="order-total">
+                <span>TOTAL</span>
+                <span>P <span id="checkoutTotal">0.00</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Place Order Button -->
+    <button class="btn" onclick="placeOrder()">PLACE ORDER</button>
+
+    <!-- Footer -->
+    <div class="footer">
+        COPYRIGHT &copy; 2026 PharmaLink. All rights reserved.
+    </div>
+
+    <script>
+        // Load order summary from cart
+        function loadOrderSummary() {
+            let cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
+            const summaryDiv = document.getElementById('orderSummary');
+            summaryDiv.innerHTML = '';
+
+            if (cart.length === 0) {
+                summaryDiv.innerHTML = '<p style="color:#555;">No items in cart. <a href="Products.html" style="color:#198754;">Shop now</a></p>';
+                document.getElementById('checkoutTotal').textContent = '0.00';
+                return;
+            }
+
+            let grandTotal = 0;
+            cart.forEach(item => {
+                let row = document.createElement('div');
+                row.className = 'order-item';
+                row.innerHTML = `<span>${item.name} x${item.qty}</span><span>P ${item.total.toFixed(2)}</span>`;
+                summaryDiv.appendChild(row);
+                grandTotal += item.total;
+            });
+
+            document.getElementById('checkoutTotal').textContent = grandTotal.toFixed(2);
+        }
+
+        function placeOrder() {
+            const name = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const option = document.querySelector('input[name="option"]:checked').value;
+            const cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
+
+            if (!name || !phone || !address) {
+                alert('Please fill in all your details before placing the order.');
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add products before placing an order.');
+                return;
+            }
+
+            // Clear cart after order
+            localStorage.removeItem('pharmaCart');
+
+            alert('✅ Order placed successfully!\n\nThank you, ' + name + '!\nYour order will be ' + option.toLowerCase() + 'ed to: ' + address + '\nWe will contact you at: ' + phone);
+
+            window.location.href = 'index.html';
+        }
+
+        loadOrderSummary();
+    </script>
+
+</body>
+</html>
