@@ -53,7 +53,7 @@ body {
 }
 
 /* ===== BANNER ===== */
-.banner, .Hero {
+.banner {
     background-color: rgb(7, 129, 70);
     color: white;
     text-align: center;
