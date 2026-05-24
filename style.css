@@ -88,30 +88,8 @@ body {
     background-color: #e0e0e0;
 }
 
-/* PRODUCTS GRID */
-.Prduct {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.Product-Card1 {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.Product-Card1 h4 {
-    color: rgb(7, 129, 70);
-    margin-bottom: 10px;
-}
-
-/* ===== SERVICES GRID ===== */
+/*  SERVICES GRID */
 .Services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -134,7 +112,7 @@ body {
     margin: 10px 0;
 }
 
-/* ===== PAGINATION ===== */
+/* PAGINATION */
 .Pagination {
     text-align: center;
     padding: 20px;
@@ -162,7 +140,7 @@ body {
     border: 1px solid rgb(7, 129, 70);
 }
 
-/* ===== CART TABLE ===== */
+/*  CART TABLE */
 .cart-table {
     width: 90%;
     margin: 20px auto;
@@ -197,7 +175,7 @@ body {
     font-weight: bold;
 }
 
-/* ===== CART SUMMARY ===== */
+/* CART SUMMARY */
 .cart-summary {
     background-color: white;
     padding: 20px;
@@ -219,7 +197,7 @@ body {
     border-radius: 5px;
 }
 
-/* ===== CHECKOUT & BOOKING FORMS ===== */
+/*  CHECKOUT & BOOKING FORMS */
 .Customer-details, .Delivery, .Summary {
     background-color: white;
     padding: 20px;
@@ -277,7 +255,7 @@ body {
     border-top: 2px solid rgb(7, 129, 70);
 }
 
-/* ===== PRODUCT DETAILS PAGE ===== */
+/* PRODUCT DETAILS PAGE */
 .Product {
     display: flex;
     flex-wrap: wrap;
