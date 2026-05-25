@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - PharmaLink</title>
@@ -62,65 +63,6 @@
     <div class="footer">
         COPYRIGHT &copy; 2026 PharmaLink. All rights reserved.
     </div>
-
-    <script>
-        function loadCart() {
-            let cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
-            const tbody = document.getElementById('cartBody');
-            tbody.innerHTML = '';
-
-            if (cart.length === 0) {
-                document.getElementById('emptyMsg').style.display = 'block';
-                document.getElementById('cartSummary').style.display = 'none';
-                document.getElementById('cartTable').style.display = 'none';
-                return;
-            }
-
-            document.getElementById('emptyMsg').style.display = 'none';
-            document.getElementById('cartSummary').style.display = 'flex';
-            document.getElementById('cartTable').style.display = 'table';
-
-            let grandTotal = 0;
-
-            cart.forEach((item, index) => {
-                let row = document.createElement('tr');
-                row.innerHTML = `
-                    <td class="product-info"><span>${item.name}</span></td>
-                    <td>
-                        <button onclick="changeQty(${index}, -1)">-</button>
-                        <span class="qty">${item.qty}</span>
-                        <button onclick="changeQty(${index}, 1)">+</button>
-                    </td>
-                    <td class="price">${item.price.toFixed(2)}</td>
-                    <td class="total">${item.total.toFixed(2)}</td>
-                    <td><button onclick="removeItem(${index})" style="background-color:#dc3545;">✕</button></td>
-                `;
-                tbody.appendChild(row);
-                grandTotal += item.total;
-            });
-
-            document.getElementById('grandTotal').textContent = grandTotal.toFixed(2);
-        }
-
-        function changeQty(index, change) {
-            let cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
-            cart[index].qty += change;
-            if (cart[index].qty < 1) cart[index].qty = 1;
-            cart[index].total = cart[index].qty * cart[index].price;
-            localStorage.setItem('pharmaCart', JSON.stringify(cart));
-            loadCart();
-        }
-
-        function removeItem(index) {
-            let cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
-            cart.splice(index, 1);
-            localStorage.setItem('pharmaCart', JSON.stringify(cart));
-            loadCart();
-        }
-
-        // Load cart on page load
-        loadCart();
-    </script>
 
 </body>
 </html>

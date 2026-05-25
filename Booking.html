@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking - PharmaLink</title>
@@ -14,14 +15,13 @@
             <img src="LOGO AND BACKGROUND IMAGES/Pharmalink logo.png" alt="PharmaLink Logo" width="200">
         </div>
         <!-- Navigation -->
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="About Us.html">About Us</a>
-        <a href="Products.html">Products</a>
-        <a href="Services.html">Services</a>
-        <a href="Cart.html">Cart</a>
-    </div>
-
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="About Us.html">About Us</a>
+            <a href="Products.html">Products</a>
+            <a href="Services.html">Services</a>
+            <a href="Cart.html">Cart</a>
+        </div>
     </div>
 
     <!-- Hero / Banner -->
@@ -82,40 +82,6 @@
     <div class="footer">
         COPYRIGHT &copy; 2026 PharmaLink. All rights reserved.
     </div>
-
-    <script>
-        // Pre-fill service if coming from Services page
-        window.onload = function () {
-            const preSelected = localStorage.getItem('bookingService');
-            if (preSelected) {
-                const select = document.getElementById('service');
-                for (let option of select.options) {
-                    if (option.value === preSelected) {
-                        option.selected = true;
-                        break;
-                    }
-                }
-                localStorage.removeItem('bookingService');
-            }
-        };
-
-        function submitBooking() {
-            const name = document.getElementById('fullName').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const service = document.getElementById('service').value;
-            const date = document.getElementById('bookingDate').value;
-            const time = document.getElementById('bookingTime').value;
-
-            if (!name || !phone || !service || !date || !time) {
-                alert('Please fill in all required fields before confirming your booking.');
-                return;
-            }
-
-            alert('✅ Booking confirmed!\n\nName: ' + name + '\nService: ' + service + '\nDate: ' + date + '\nTime: ' + time + '\n\nWe will contact you at ' + phone + ' to confirm your appointment.');
-
-            window.location.href = 'index.html';
-        }
-    </script>
 
 </body>
 </html>

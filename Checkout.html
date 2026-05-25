@@ -12,7 +12,7 @@
     <!-- Header -->
     <div class="header">
         <div class="Logo">
-            <img src="LOGO AND BACKGROUND IMAGES/Logo.png" alt="PharmaLink Logo" width="200">
+            <img src="LOGO AND BACKGROUND IMAGES/Pharmalink logo.png" alt="PharmaLink Logo" width="200">
         </div>
     </div>
 
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Hero / Banner -->
-    <div class="Hero">
+    <div class="banner">
         <h1>CHECKOUT</h1>
     </div>
 
@@ -84,59 +84,6 @@
     <div class="footer">
         COPYRIGHT &copy; 2026 PharmaLink. All rights reserved.
     </div>
-
-    <script>
-        // Load order summary from cart
-        function loadOrderSummary() {
-            let cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
-            const summaryDiv = document.getElementById('orderSummary');
-            summaryDiv.innerHTML = '';
-
-            if (cart.length === 0) {
-                summaryDiv.innerHTML = '<p style="color:#555;">No items in cart. <a href="Products.html" style="color:#198754;">Shop now</a></p>';
-                document.getElementById('checkoutTotal').textContent = '0.00';
-                return;
-            }
-
-            let grandTotal = 0;
-            cart.forEach(item => {
-                let row = document.createElement('div');
-                row.className = 'order-item';
-                row.innerHTML = `<span>${item.name} x${item.qty}</span><span>P ${item.total.toFixed(2)}</span>`;
-                summaryDiv.appendChild(row);
-                grandTotal += item.total;
-            });
-
-            document.getElementById('checkoutTotal').textContent = grandTotal.toFixed(2);
-        }
-
-        function placeOrder() {
-            const name = document.getElementById('fullName').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const address = document.getElementById('address').value.trim();
-            const option = document.querySelector('input[name="option"]:checked').value;
-            const cart = JSON.parse(localStorage.getItem('pharmaCart')) || [];
-
-            if (!name || !phone || !address) {
-                alert('Please fill in all your details before placing the order.');
-                return;
-            }
-
-            if (cart.length === 0) {
-                alert('Your cart is empty. Please add products before placing an order.');
-                return;
-            }
-
-            // Clear cart after order
-            localStorage.removeItem('pharmaCart');
-
-            alert('✅ Order placed successfully!\n\nThank you, ' + name + '!\nYour order will be ' + option.toLowerCase() + 'ed to: ' + address + '\nWe will contact you at: ' + phone);
-
-            window.location.href = 'index.html';
-        }
-
-        loadOrderSummary();
-    </script>
 
 </body>
 </html>
